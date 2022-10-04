@@ -1,31 +1,26 @@
-#include<stdio.h>
+##include<stdio.h>
 void mean_median(int a[],int n)
 {
-    int i,max,j,mean=0,median,c,f[10];
+    int i,m,mean=0,median,c,f[10];
+    float max,h;
      for(i=0;i<n;i++)
     {
         c=1;
         mean=mean+a[i];
-        for(j=i+1;j<n;j++)
-        {
-            
-            if(a[i]==a[j])
-            {
-               c++;
-            }
-            f[i]=c; 
-            
-            }
-            if(f[i]>f[i+1])
-            {
-                max=f[i];
-            }      
-            else
-            max=f[i+1];  
-         
     }
-    printf("Mean is %d",mean);
-    printf("Median is %d",max);
+    if(n%2==0)
+    {
+        m=n/2;
+        h=a[m]+a[m-1];
+        max = h/2;
+    }
+    else
+    {
+        max = (a[(n/2)]);
+    }
+    mean= mean/n;
+    printf("Mean is %d \n",mean);
+    printf("Median is %f",max);
 }
 void main()
 {
